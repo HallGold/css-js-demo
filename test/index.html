@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="www.baidu.com">aaaa</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto-complete Email</title>
+  </head>
+  <body>
+    <input type="text" id="email-input" oninput="autoCompleteEmail()" placeholder="请输入您的邮箱" />
+    <ul id="suggestions" style="display: none"></ul>
+
+    <script>
+      const emailDomains = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "163.com", "qq.com"];
+
+      function autoCompleteEmail() {
+        const input = document.getElementById("email-input");
+        const suggestions = document.getElementById("suggestions");
+
+        const value = input.value;
+        const atIndex = value.indexOf("@");
+
+        if (atIndex !== -1) {
+          const userInput = value.slice(atIndex + 1).toLowerCase();
+
+          const filteredDomains = emailDomains.filter((domain) => domain.startsWith(userInput));
+
+          if (filteredDomains.length > 0) {
+            suggestions.style.display = "block";
+            suggestions.innerHTML = "";
+
+            filteredDomains.forEach((domain) => {
+              const li = document.createElement("li");
+              li.textContent = value.slice(0, atIndex + 1) + domain;
+              li.style.cursor = "pointer";
+              li.onclick = () => {
+                input.value = li.textContent;
+                suggestions.style.display = "none";
+              };
+              suggestions.appendChild(li);
+            });
+          } else {
+            suggestions.style.display = "none";
+          }
+        } else {
+          suggestions.style.display = "none";
+        }
+      }
+    </script>
+  </body>
 </html>
