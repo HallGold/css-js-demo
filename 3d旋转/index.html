@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D盒子旋转Demo</title>
+    <style>
+      .rotate-box {
+        height: 137px;
+        width: 286px;
+        overflow: hidden; /* 隐藏翻转上去和翻转下去的图片 */
+      }
+      .rotate-inner {
+        transition: all 0.4s ease;
+        perspective: 428px; /* 重点属性，定义 3D 元素距视图的距离，有他才有3D效果 */
+      }
+      .rotate-inner .top-block,
+      .rotate-inner .bottom-block {
+        backface-visibility: hidden; /* 辅助属性-属性定义当元素不面向屏幕时是否可见，如果在旋转元素不希望看到其背面时，该属性很有用 */
+        transition: all 0.4s ease;
+        width: 286px;
+        height: 137px;
+      }
+      .rotate-inner .top-block {
+        transform-origin: bottom; /* 旋转轴线位置 */
+        transform: rotateX(0deg); /* 默认旋转角度 */
+        background-color: blue;
+      }
+      .rotate-inner .bottom-block {
+        transform-origin: top; /* 旋转轴线位置 */
+        transform: rotateX(-90deg);
+        background-color: #777;
+      }
+      .rotate-box:hover .rotate-inner {
+        margin-top: -137px; /* 旋转后上移，把下面的block显示，上面的隐藏 */
+      }
+      .rotate-box:hover .rotate-inner .top-block {
+        transform: rotateX(90deg); /* 旋转后角度 */
+      }
+      .rotate-box:hover .rotate-inner .bottom-block {
+        transform: rotateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rotate-box">
+      <div class="rotate-inner">
+        <div class="top-block"></div>
+        <div class="bottom-block"></div>
+      </div>
+    </div>
+  </body>
+</html>
