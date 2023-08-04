@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        margin: auto;
+        text-align: center;
+        background: #f0f4fa;
+        background: black;
+      }
+
+      .fireworks {
+        position: relative;
+      }
+      .fireworks::before,
+      .fireworks::after {
+        position: absolute;
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+          0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+          0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+          0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+        -webkit-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards;
+        animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards;
+      }
+      .fireworks::after {
+        -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
+        animation-delay: 1.25s, 1.25s, 1.25s;
+        -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
+        animation-duration: 1.25s, 1.25s, 6.25s;
+      }
+
+      @-webkit-keyframes bang {
+        to {
+          box-shadow: -15px -106.3333333333px #8000ff, -109px -34.3333333333px #b300ff, 96px -32.3333333333px #00ff22, -49px -43.3333333333px #e1ff00,
+            119px -202.3333333333px #ff00c4, 110px -164.3333333333px #0099ff, 2px -59.3333333333px #ffbf00, -3px -181.3333333333px #ffa200,
+            91px -126.3333333333px #4800ff, 25px -186.3333333333px #1eff00, 77px -3.3333333333px #a200ff, -2px -103.3333333333px #0077ff,
+            88px -56.3333333333px #d500ff, -26px -23.3333333333px #0dff00, -124px 27.6666666667px #ff1a00, -79px 9.6666666667px #1100ff,
+            90px -62.3333333333px #fff700, -110px -179.3333333333px #00d0ff, -22px -144.3333333333px #ff00f2, 104px -93.3333333333px #1eff00,
+            81px -146.3333333333px #00ff15, -4px -155.3333333333px #00ff1a, -21px -131.3333333333px #ff00f2, -97px -143.3333333333px #006aff,
+            99px 10.6666666667px #0dff00, -65px 20.6666666667px #0099ff, -82px -25.3333333333px #d500ff, -35px -164.3333333333px #d0ff00,
+            -100px -189.3333333333px #0088ff, -115px 14.6666666667px #0055ff, -109px 9.6666666667px #000dff, -3px -3.3333333333px #ffe100,
+            -69px -34.3333333333px #00b3ff, 42px 20.6666666667px #ff008c, -48px -183.3333333333px #00ffcc, -97px -185.3333333333px #8000ff,
+            95px -86.3333333333px #00ffd0, -121px -67.3333333333px #ff1500, 9px -134.3333333333px #d0ff00, -104px -25.3333333333px #ffbb00,
+            -108px -77.3333333333px #a6ff00, 9px 34.6666666667px yellow, 121px -121.3333333333px #ff001a, -22px -176.3333333333px #3700ff,
+            -71px -191.3333333333px #ff8000, 27px -181.3333333333px #ff4400, -117px -37.3333333333px #006aff, 34px -108.3333333333px lime,
+            -100px -189.3333333333px #0095ff, 50px 33.6666666667px #ff0009, 76px -136.3333333333px #9500ff;
+        }
+      }
+
+      @keyframes bang {
+        to {
+          box-shadow: -15px -106.3333333333px #8000ff, -109px -34.3333333333px #b300ff, 96px -32.3333333333px #00ff22, -49px -43.3333333333px #e1ff00,
+            119px -202.3333333333px #ff00c4, 110px -164.3333333333px #0099ff, 2px -59.3333333333px #ffbf00, -3px -181.3333333333px #ffa200,
+            91px -126.3333333333px #4800ff, 25px -186.3333333333px #1eff00, 77px -3.3333333333px #a200ff, -2px -103.3333333333px #0077ff,
+            88px -56.3333333333px #d500ff, -26px -23.3333333333px #0dff00, -124px 27.6666666667px #ff1a00, -79px 9.6666666667px #1100ff,
+            90px -62.3333333333px #fff700, -110px -179.3333333333px #00d0ff, -22px -144.3333333333px #ff00f2, 104px -93.3333333333px #1eff00,
+            81px -146.3333333333px #00ff15, -4px -155.3333333333px #00ff1a, -21px -131.3333333333px #ff00f2, -97px -143.3333333333px #006aff,
+            99px 10.6666666667px #0dff00, -65px 20.6666666667px #0099ff, -82px -25.3333333333px #d500ff, -35px -164.3333333333px #d0ff00,
+            -100px -189.3333333333px #0088ff, -115px 14.6666666667px #0055ff, -109px 9.6666666667px #000dff, -3px -3.3333333333px #ffe100,
+            -69px -34.3333333333px #00b3ff, 42px 20.6666666667px #ff008c, -48px -183.3333333333px #00ffcc, -97px -185.3333333333px #8000ff,
+            95px -86.3333333333px #00ffd0, -121px -67.3333333333px #ff1500, 9px -134.3333333333px #d0ff00, -104px -25.3333333333px #ffbb00,
+            -108px -77.3333333333px #a6ff00, 9px 34.6666666667px yellow, 121px -121.3333333333px #ff001a, -22px -176.3333333333px #3700ff,
+            -71px -191.3333333333px #ff8000, 27px -181.3333333333px #ff4400, -117px -37.3333333333px #006aff, 34px -108.3333333333px lime,
+            -100px -189.3333333333px #0095ff, 50px 33.6666666667px #ff0009, 76px -136.3333333333px #9500ff;
+        }
+      }
+      @-webkit-keyframes gravity {
+        to {
+          transform: translateY(75px);
+          opacity: 0;
+        }
+      }
+      @keyframes gravity {
+        to {
+          transform: translateY(75px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fireworks"></div>
+  </body>
+</html>
