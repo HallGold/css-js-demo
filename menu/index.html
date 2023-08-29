@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="base">
+      <div class="menu">
+        <div class="icon">
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div class="icons">
+        <i class="fa fa-user" aria-hidden="true">aaa</i>
+        <i class="fa fa-calendar-o" aria-hidden="true">bbb</i>
+        <i class="fa fa-tachometer" aria-hidden="true">ccc</i>
+      </div>
+      <div class="section">
+        <div class="cover1">
+          <div class="cover2">
+            <a class="content" href="#calender"></a>
+          </div>
+        </div>
+      </div>
+      <a class="section-static top" href="#profile"></a>
+      <a class="section-static bottom" href="#dashboard"></a>
+    </div>
+
+    <script>
+      const el = document.querySelector(".base");
+      el.addEventListener("click", function () {
+        this.classList.toggle("close");
+      });
+    </script>
+  </body>
+</html>
